@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Chatbot - Job Portal</title>
+    <style>
+        /* Chatbot Styles */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            display: none; /* Hidden initially */
+        }
+
+        .chat-header {
+            background-color: #007bff;
+            padding: 10px;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chat-body {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .chat-message {
+            margin: 10px 0;
+        }
+
+        .user-message {
+            background-color: #e9ecef;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #007bff;
+            padding: 8px;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-footer input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .chat-footer button {
+            padding: 8px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-footer button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Chat Icon Styles */
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .chat-icon img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chatbot HTML -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            Job & Resume Assistant
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Ask a question...">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <!-- Chat Icon -->
+    <div class="chat-icon" id="chat-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" alt="Chat Icon">
+    </div>
+
+    <script>
+        // JavaScript for Chatbot
+
+        const chatInput = document.getElementById('chat-input');
+        const chatBody = document.getElementById('chat-body');
+        const chatSend = document.getElementById('chat-send');
+        const chatContainer = document.getElementById('chat-container');
+        const chatIcon = document.getElementById('chat-icon');
+
+        // Resume data (replace links with your actual PDF paths)
+        const resumes = {
+            "Ashish Phaltankar": "/Ashish R Phaltankar-1.pdf",
+            "Sampada Tikale": "/Sampada_Tikale_UpdatedResume (1).pdf",
+            "Shruti Ashtade": "/Shruti Ashtage.pdf",
+            "Vishal Gangji": "/VishalGangji.pdf",
+            "Anil Mali": "/Anil_Mali_RESUME_up.pdf"
+        };
+
+        // Job Portal links
+        const jobPortals = {
+            "Naukri": "https://www.naukri.com",
+            "Indeed": "https://www.indeed.com",
+            "LinkedIn": "https://www.linkedin.com/jobs",
+            "Monster": "https://www.monsterindia.com",
+            "Glassdoor": "https://www.glassdoor.com"
+        };
+
+        // Resume Tracking Tips
+        const resumeTrackingTips = [
+            "Tip 1: Use an ATS (Applicant Tracking System) compliant format to increase the chances of your resume being seen.",
+            "Tip 2: Include relevant keywords from the job description in your resume to get through automated screenings.",
+            "Tip 3: Track your application status by setting up alerts on job portals like LinkedIn and Naukri.",
+            "Tip 4: Use services like Jobscan to analyze how well your resume matches a job posting.",
+            "Tip 5: Keep track of all jobs applied for using a spreadsheet or dedicated job application tracking tools."
+        ];
+
+        // Predefined Questions and Answers
+        const predefinedQnA = {
+            "what services does the online job portal offer?": "The Online Job Portal offers several services, including job searches, resume analysis, best resume samples, alumni connections, and the ability to contact recruiters. You can also log in or sign up for additional features.",
+            "how can i view available jobs?": "To view available jobs, click on the 'View Jobs' option in the main navigation bar at the top of the page. You'll be redirected to a page where you can browse or search for job listings.",
+            "what is the resume analyzer feature?": "The 'Resume Analyzer' is a tool that helps you analyze and improve your resume. By uploading your resume, the system will provide feedback on how to enhance it for better chances with employers.",
+            "where can i find resume samples?": "To view some of the best resume samples, click on the 'Best Resume Sample' option in the main menu. This section will show you examples of professional resumes to help guide your own.",
+            "how do i connect with alumni?": "You can connect with alumni by clicking on the 'Alumni Connect' option in the navigation menu. This will help you build networks and reach out to professionals from your field.",
+            "how can i contact a recruiter?": "To contact a recruiter, simply click on the 'Contact Recruiter' option. You’ll be able to send a message or inquiry directly to recruiters who can assist you with your job search.",
+            "how do i log in to the online job portal?": "You can log in by clicking the 'Login' button located in the top right corner of the page. You’ll need your email and password to access your account.",
+            "how do i create an account on the job portal?": "To create a new account, click the 'Sign Up' button at the top right corner. Fill in the required details to register and get access to personalized features.",
+            "who developed this portal?": "The Online Job Portal is designed and developed by the Orchid Team, as mentioned at the bottom of the page.",
+            "how can i search for jobs on the portal?": "You can search for jobs using the job search feature displayed on the homepage. It includes options to filter and find job listings based on your preferences."
+        };
+
+        // Function to add a chat message
+        function addMessage(content, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.innerHTML = content;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;  // Auto-scroll to the latest message
+        }
+
+        // Handle send button click
+        chatSend.addEventListener('click', function() {
+            const userMessage = chatInput.value;
+            if (userMessage.trim() === '') return;
+
+            // Add user's message to chat
+            addMessage(userMessage, 'user');
+            chatInput.value = '';
+
+            // Process bot response
+            processUserMessage(userMessage);
+        });
+
+        // Handle user's message
+        function processUserMessage(message) {
+            message = message.toLowerCase();
+
+            // Check for predefined questions and answers
+            if (predefinedQnA[message]) {
+                addMessage(predefinedQnA[message], 'bot');
+            } 
+            // Handle resume download requests
+            else if (message.includes('resume') || message.includes('download')) {
+                const foundResume = Object.keys(resumes).find(name => message.includes(name.toLowerCase()));
+                if (foundResume) {
+                    const resumeLink = resumes[foundResume];
+                    addMessage(`You can download ${foundResume}'s resume here: <a href="${resumeLink}" download>Download ${foundResume}'s Resume (PDF)</a>`, 'bot');
+                } else {
+                    addMessage("Sorry, I couldn't find the resume you're asking for. Please provide a valid name.", 'bot');
+                }
+            } 
+            // Handle job portal links
+            else if (message.includes('job portal') || message.includes('jobs')) {
+                addMessage("Here are some popular job portals you can use: <br>" +
+                    "<a href='https://www.naukri.com' target='_blank'>Naukri</a><br>" +
+                    "<a href='https://www.indeed.com' target='_blank'>Indeed</a><br>" +
+                    "<a href='https://www.linkedin.com/jobs' target='_blank'>LinkedIn</a><br>" +
+                    "<a href='https://www.monsterindia.com' target='_blank'>Monster</a><br>" +
+                    "<a href='https://www.glassdoor.com' target='_blank'>Glassdoor</a>", 'bot');
+            } 
+            // Provide resume tracking tips
+            else if (message.includes('track resume') || message.includes('tracking')) {
+                const randomTip = resumeTrackingTips[Math.floor(Math.random() * resumeTrackingTips.length)];
+                addMessage(randomTip, 'bot');
+            } 
+            // Handle basic greetings
+            else if (message.includes('hello') || message.includes('hi')) {
+                addMessage("Hello! How can I assist you today? You can ask for resume downloads, job portal links, or resume tracking tips.", 'bot');
+            } 
+            // Default response
+            else {
+                addMessage("I'm here to help you with online Job Portal offers several services, including job searches, resume analysis, best resume samples, alumni connections, and the ability to contact recruiters.", 'bot');
+            }
+        }
+
+        // Show chat container when chat icon is clicked
+        chatIcon.addEventListener('click', function() {
+            chatContainer.style.display = 'block'; // Show the chatbot window
+            chatIcon.style.display = 'none'; // Hide the chat icon
+        });
+
+        // Hide chat container and show chat icon when clicking outside the chatbot
+        document.addEventListener('click', function(event) {
+            const isClickInsideChat = chatContainer.contains(event.target);
+            const isClickOnChatIcon = chatIcon.contains(event.target);
+
+            if (!isClickInsideChat && !isClickOnChatIcon) {
+                chatContainer.style.display = 'none';  // Hide the chatbot window
+                chatIcon.style.display = 'flex';  // Show the chat icon again
+            }
+        });
+    </script>
+
+</body>
+</html>

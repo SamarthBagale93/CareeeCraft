@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Connect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .alumni-container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .header h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .header .highlight {
+            font-weight: 600;
+            color: #5f5fdf;
+        }
+
+        .alumni-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .alumni-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.5s ease;
+        }
+
+        .alumni-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .alumni-card h1 {
+            font-size: 24px;
+            color: #5f5fdf;
+            margin-bottom: 5px;
+        }
+
+        .alumni-card h3 {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .alumni-info p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .alumni-info strong {
+            color: #5f5fdf;
+        }
+
+        .alumni-info a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .alumni-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="alumni-container">
+        <div class="header">
+            <h2>Meet Our Alumni <br><span class="highlight">Connect with Success</span></h2>
+        </div>
+
+        <div class="alumni-grid">
+            <!-- Alumni Card 1 -->
+            <div class="alumni-card">
+                <img src="./ashish.jpg" alt="Rohit Mehra" class="alumni-photo">
+                <h1>Ashish Phaltankar</h1>
+                <h3>Android Developer</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> TCS Ltd.</p>
+                    <p><strong>Phone:</strong> +91 98765 43210</p>
+                    <p><strong>Email:</strong> <a href="ashishp2020gmail.com">ashishp2020gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ashishp2020" target="_blank">linkedin.com/in/ashishp2020</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni Card 2 -->
+            <div class="alumni-card">
+                <img src="./shruti.jpeg" alt="Simran Kaur" class="alumni-photo">
+                <h1>Shruti Ashtage</h1>
+                <h3>Dot Net Developer</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong>TCS</p>
+                    <p><strong>Phone:</strong> +91 87654 32109</p>
+                    <p><strong>Email:</strong> <a href="mailto:simran.kaur@amazon.in">shrutiashatage23@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/simrankaur" target="_blank">linkedin.com/in/shruti33</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni Card 3 -->
+            <div class="alumni-card">
+                <img src="./sampada.jpg" alt="Anil Kapoor" class="alumni-photo">
+                <h1>Sampada Tikale</h1>
+                <h3>Python Developer</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> Wipro</p>
+                    <p><strong>Phone:</strong> +91 99888 77665</p>
+                    <p><strong>Email:</strong> <a href="sampadatikale201@gmail.com">sampadatikale201@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anilkapoor" target="_blank">linkedin.com/in/sampadatikale</a></p>
+                </div>
+            </div>
+
+            <!-- Repeat similar structure for Alumni 4 to 15 -->
+            <div class="alumni-card">
+                <img src="./image.png" alt="Priya Sharma" class="alumni-photo">
+                <h1>Vishal Gangji</h1>
+                <h3>UI/UX Designer</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> HCL Technologies</p>
+                    <p><strong>Phone:</strong> +91 91234 98765</p>
+                    <p><strong>Email:</strong> <a href="mailto:priya.sharma@hcl.com">vishalgangji29@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/priyasharma" target="_blank">linkedin.com/in/vishalg</a></p>
+                </div>
+            </div>
+
+            <!-- Add Alumni 5 to 15 similarly -->
+            <div class="alumni-card">
+                <img src="./akshay.jpg" alt="Rohit Mehra" class="alumni-photo">
+                <h1>Akshay Mashale</h1>
+                <h3>Senior Data Analyst</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> Infosys Ltd.</p>
+                    <p><strong>Phone:</strong> +91 98765 43210</p>
+                    <p><strong>Email:</strong> <a href="mailto:rohit.mehra@infosys.com">akshaymasale45@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/rohitmehra" target="_blank">linkedin.com/in/akshms22</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni Card 2 -->
+            <div class="alumni-card">
+                <img src="./Kedar Swami.jpeg" alt="Simran Kaur" class="alumni-photo">
+                <h1>Kedar Swami</h1>
+                <h3>AI/ML</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> Amazon India</p>
+                    <p><strong>Phone:</strong> +91 87654 32109</p>
+                    <p><strong>Email:</strong> <a href="mailto:simran.kaur@amazon.in">kedarswami89@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/simrankaur" target="_blank">linkedin.com/in/kedar10</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni Card 3 -->
+            <div class="alumni-card">
+                <img src="./Rachana Mangalaram.jpeg" alt="Anil Kapoor" class="alumni-photo">
+                <h1>Rachana Mangalaram</h1>
+                <h3>Data Scientist</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> Wipro</p>
+                    <p><strong>Phone:</strong> +91 99888 77665</p>
+                    <p><strong>Email:</strong> <a href="mailto:anil.kapoor@wipro.com">rachana346@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anilkapoor" target="_blank">linkedin.com/in/rachanam98</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni Card 4 -->
+            <div class="alumni-card">
+                <img src="./Yashashwini Awate.jpeg" alt="Priya Sharma" class="alumni-photo">
+                <h1>Yashashwini Awate</h1>
+                <h3>UI/UX Designer</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> TIAA Technologies</p>
+                    <p><strong>Phone:</strong> +91 91234 98765</p>
+                    <p><strong>Email:</strong> <a href="mailto:priya.sharma@hcl.com">awateyeshwini56@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/priyasharma" target="_blank">linkedin.com/in/awateyashashwini2</a></p>
+                </div>
+            </div>
+
+            <!-- Alumni Card 5 -->
+            <div class="alumni-card">
+                <img src="./Snehal Shilvant.jpeg" alt="Nikhil Jain" class="alumni-photo">
+                <h1>Snehal Shilvant</h1>
+                <h3>Software Engineer</h3>
+                <div class="alumni-info">
+                    <p><strong>Company:</strong> TIAA</p>
+                    <p><strong>Phone:</strong> +91 91234 65432</p>
+                    <p><strong>Email:</strong> <a href="mailto:nikhil.jain@tcs.com">snehalshilvant2gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nikhiljain" target="_blank">linkedin.com/in/Snehalshilvant</a></p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* Navbar background color */
+.bg-custom {
+    background-color: #283593 !important;
+}
+
+/* Navbar brand and links color */
+.navbar .navbar-brand,
+.navbar .nav-item .nav-link {
+    font-size: 20px;
+    color: white !important;
+    padding: 0 !important; /* Ensure padding is removed */
+    font-weight: normal !important; /* Make the font weight normal */
+    background-color: transparent !important; /* No background color */
+    border: none !important; /* Remove border */
+}
+
+/* Hover effect for links */
+.navbar .nav-item .nav-link:hover {
+    color: #ffeb3b !important; /* Subtle color change on hover */
+    background-color: transparent !important; /* Ensure no background on hover */
+    text-decoration: underline !important; /* Optional underline on hover */
+}
+
+/* Active link styling to prevent box look */
+.navbar .nav-item .nav-link.active,
+.navbar .nav-item .nav-link:focus {
+    background-color: transparent !important;
+    color: white !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}

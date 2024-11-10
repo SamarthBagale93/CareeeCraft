@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 30px;
+            box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-success {
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>Premium Features Unlock, User</h1>
+
+        <!-- User Information Form -->
+        <input type="text" id="name" class="form-control my-3" placeholder="Enter your name" />
+        <input type="email" id="email" class="form-control my-3" placeholder="Enter your email" />
+        <input type="tel" id="phone" class="form-control my-3" placeholder="Enter your phone number" />
+        <input type="text" id="address" class="form-control my-3" placeholder="Enter your address" />
+        <input type="number" id="amount" class="form-control my-3" placeholder="Enter amount here" value="500" readonly />
+
+        <button id="paymentButton" class="btn btn-success btn-block">Checkout</button>
+    </div>
+
+    <!-- jQuery and Razorpay scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script> <!-- Razorpay script -->
+    <script src="js/script.js"></script> <!-- Link to external script -->
+</body>
+
+</html>
