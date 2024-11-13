@@ -1,0 +1,267 @@
+<!-- Enhanced Footer Section with Career Insights -->
+<footer class="footer-section p-0">
+    <div class="footer-container">
+        <div class="footer-row">
+            <!-- About Us -->
+            <div class="footer-col">
+                <h4 class="animated-heading">About CareerCraft</h4>
+                <p>CareerCraft is your one-stop platform for job searches, resume analysis, alumni connections, and more.</p>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="footer-col">
+                <h4 class="animated-heading">Contact Us</h4>
+                <ul class="contact-info">
+                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> 123 Career Street, Tech City, USA</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> +1 234 567 890</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> support@careercraft.com</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4 class="animated-heading">Quick Links</h4>
+                <ul class="quick-links">
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Resume Analyzer</a></li>
+                    <li><a href="#">Alumni Connect</a></li>
+                    <li><a href="#">Contact Recruiters</a></li>
+                </ul>
+            </div>
+
+            <!-- Career Insights Section -->
+            <div class="footer-col">
+                <h4 class="animated-heading">Career Insights</h4>
+                <div class="insights-grid">
+                    <div class="insight-item">
+                        <img src="career_tips.jpg" alt="Career Tips">
+                        <div class="overlay">
+                            <p>Top 10 Interview Tips</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <img src="resume_tips.jpg" alt="Resume Building">
+                        <div class="overlay">
+                            <p>How to Craft a Winning Resume</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <img src="career_growth.jpg" alt="Career Growth">
+                        <div class="overlay">
+                            <p>Career Growth Strategies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-row">
+            <!-- Social Media Links -->
+            <div class="footer-col">
+                <h4 class="animated-heading">Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="icon"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Dynamic Daily Quote -->
+            <div class="footer-col">
+                <h4 class="animated-heading">Daily Motivation</h4>
+                <p class="daily-quote">"Your career is what you make of it. Strive for growth every day."</p>
+            </div>
+
+            <!-- Back to Top Button -->
+            <div class="footer-col back-to-top">
+                <a href="#" class="back-to-top-btn"><i class="fa fa-arrow-up"></i> Back to Top</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h6 class="text-center">Designed and Developed by Orchid Team</h6>
+</footer>
+
+<!-- Enhanced Footer Styles with Career Insights Section -->
+<style>
+.footer-section {
+    background: linear-gradient(135deg, #004d40, #002f2f); /* Teal to dark cyan gradient */
+    color: #ddd;
+    padding: 20px 0;
+    animation: fadeInFooter 1s ease-out;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-col h4 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-col p, .footer-col ul, .footer-col .daily-quote {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.footer-col ul li {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #00aaff;
+}
+
+.social-icons a {
+    color: #bbb;
+    font-size: 1.1em;
+    margin-right: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00aaff;
+    transform: scale(1.1);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.insight-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.insight-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.insight-item:hover img {
+    transform: scale(1.1);
+}
+
+.insight-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.insight-item:hover .overlay {
+    opacity: 1;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    width: 70%;
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #00aaff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #008fcc;
+}
+
+.back-to-top-btn {
+    color: #bbb;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+    color: #00aaff;
+}
+
+hr {
+    border-color: #555;
+    margin: 20px 0;
+}
+
+@keyframes fadeInFooter {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        margin: 10px 0;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- Optional JavaScript for Back-to-Top Button -->
+<script>
+document.querySelector('.back-to-top-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
